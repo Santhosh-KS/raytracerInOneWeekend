@@ -1,10 +1,6 @@
-import Foundation
+import Foundation 
 
-public struct Vector3<A: BinaryFloatingPoint> {
-  var x: A
-  var y: A
-  var z: A
-}
+public struct Vector3<A: BinaryFloatingPoint> { var x: A ; var y: A ; var z: A }
 
 public extension Vector3 {
   init(_ x: A, _ y: A, _ z: A) {
@@ -36,6 +32,10 @@ extension Vector3: Equatable {
 
   public static func + (_ lhs: Self, _ rhs: Self) -> Self {
     Vector3(x: (lhs.x + rhs.x), y: (lhs.y + rhs.y), z: (lhs.z + rhs.z))
+  }
+
+  public static func - (_ lhs: Self, _ rhs: Self) -> Self {
+    Vector3(x: (lhs.x - rhs.x), y: (lhs.y - rhs.y), z: (lhs.z - rhs.z))
   }
 
   public static func * (_ lhs: Self, _ val: A) -> Self {

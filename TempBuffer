@@ -1,1 +1,82 @@
 output of: main.swift
+Building for debugging...
+
+warning: Will not do cross-module incremental builds, priors saved at TimePoint(seconds: 1685735210, nanoseconds: 0)), but the previous build started at TimePoint(seconds: 1685735210, nanoseconds: 17711000), at '/home/gl-245/swift_stuff/raytracerInOneWeekend/.build/x86_64-unknown-linux-gnu/debug/ray_tracer.build/master.priors'
+
+error: emit-module command failed with exit code 1 (use -v to see invocation)
+[1/6] Emitting module ray_tracer
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:18: error: consecutive statements on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                 ^
+                 ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:75: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                          ^
+                                                                          ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:84: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                                   ^
+                                                                                   ;
+[2/6] Compiling ray_tracer main.swift
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:18: error: consecutive statements on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                 ^
+                 ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:75: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                          ^
+                                                                          ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:84: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                                   ^
+                                                                                   ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/main.swift:24:7: warning: initialization of immutable value 'a' was never used; consider replacing with assignment to '_' or removing it
+  let a = ray.direction .* ray.direction
+  ~~~~^
+  _
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/main.swift:25:7: warning: initialization of immutable value 'b' was never used; consider replacing with assignment to '_' or removing it
+  let b = 2 * (oc .* ray.direction)
+  ~~~~^
+  _
+[3/6] Compiling ray_tracer vector3.swift
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:18: error: consecutive statements on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                 ^
+                 ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:75: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                          ^
+                                                                          ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:84: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                                   ^
+                                                                                   ;
+[4/6] Compiling ray_tracer utils.swift
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:18: error: consecutive statements on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                 ^
+                 ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:75: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                          ^
+                                                                          ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:84: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                                   ^
+                                                                                   ;
+[5/6] Compiling ray_tracer ray.swift
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:18: error: consecutive statements on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                 ^
+                 ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:75: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                          ^
+                                                                          ;
+/home/gl-245/swift_stuff/raytracerInOneWeekend/Sources/vector3.swift:1:84: error: consecutive declarations on a line must be separated by ';'
+import Foundation public struct Vector3<A: BinaryFloatingPoint> { var x: A var y: A var z: A }
+                                                                                   ^
+                                                                                   ;
+
+
+
