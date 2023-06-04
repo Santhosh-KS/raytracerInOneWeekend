@@ -1,10 +1,14 @@
-import Foundation 
+import Foundation
 
-public struct Vector3<A: BinaryFloatingPoint> { var x: A ; var y: A ; var z: A }
+public struct Vector3<A: BinaryFloatingPoint> {
+  var x: A
+  var y: A
+  var z: A
+}
 
-public extension Vector3 {
-  init(_ x: A, _ y: A, _ z: A) {
-      self.init(x:x, y:y, z:z)
+extension Vector3 {
+  public init(_ x: A, _ y: A, _ z: A) {
+    self.init(x: x, y: y, z: z)
   }
 }
 
@@ -12,6 +16,12 @@ extension Vector3 {
   var r: A { x }
   var g: A { y }
   var b: A { z }
+}
+
+extension Vector3 {
+  func map<B>(_ f: @escaping (A) -> B) -> Vector3<B> {
+    Vector3<B>(f(self.x), f(self.y), f(self.z))
+  }
 }
 
 extension Vector3: CustomStringConvertible {
@@ -108,14 +118,12 @@ extension Vector3: Equatable {
   }
 }
 
-public extension Vector3 {
-  func length() -> A {
+extension Vector3 {
+  public func length() -> A {
     sqrt((self.x * self.x) + (self.y * self.y) + (self.z * self.z))
   }
 
-  func squaredLength() -> A {
+  public func squaredLength() -> A {
     (self.x * self.x) + (self.y * self.y) + (self.z * self.z)
   }
-
 }
-

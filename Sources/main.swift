@@ -7,6 +7,8 @@ print("P3")
 print("\(nx) \(ny)")
 print("255")
 
+/* let b = Vector3<Float>(2.2, 3.415, 1.1).map { f in f.truncatingRemainder(dividingBy: 10) }
+print(b) */
 let pixels = pixelsGenerator(rows: nx, cols: ny)
 
 print(
@@ -19,27 +21,39 @@ func hitSphere<A: BinaryFloatingPoint>(
   _ radius: A,
   _ center: Vector3<A>,
   _ ray: Ray<A>
-) -> Bool {
+) -> A {
   let oc: Vector3<A> = ray.origin - center
   let a = ray.direction .* ray.direction
   let b = 2 * (oc .* ray.direction)
   let c = (oc .* oc) - radius * radius
   let discriminant = b * b - 4 * a * c
-  return discriminant > 0
+  return discriminant < 0 ? -1 : (-b - sqrt(discriminant)) / (2 * a)
 }
 
 func sphereColor<A: BinaryFloatingPoint>(_ ray: Ray<A>) -> Vector3<A> {
-  if (hitSphere(0.5, Vector3<A>(0,0,-1),  ray)) {
-    return Vector3<A>(1,0,1)
+  var t = hitSphere(0.5, Vector3<A>(0,0,-1), ray)
+  if t > 0 {
+      let N = createUnitVector(ray.point(at: t)) - Vector3<A>(0,0,-1)
+      return 0.5*Vector3<A>(N.x+1, N.y+1, N.z+1)
   }
   let unitDirection = createUnitVector(ray.direction)
-  let t = 0.5 * (unitDirection.y + 1)
+  t = 0.5 * (unitDirection.y + 1)
   return (1-t)*Vector3<A>(1,1,1) + (t * Vector3<A>(0.5, 0.7, 1))
 }
 
-let v = Vector3<Float>(x: 1, y: 1, z: 1)
+func redsphereColor<A: BinaryFloatingPoint>(_ ray: Ray<A>) -> Vector3<A> {
+  var t = hitSphere(0.5, Vector3<A>(0,0,-1), ray)
+  if t > 0 {
+    return Vector3<A>(1,0,1)
+  }
+  let unitDirection = createUnitVector(ray.direction)
+  t = 0.5 * (unitDirection.y + 1)
+  return (1-t)*Vector3<A>(1,1,1) + (t * Vector3<A>(0.5, 0.7, 1))
+}
+
+/* let v = Vector3<Float>(x: 1, y: 1, z: 1)
 print(v)
-print(createUnitVector(v))
+print(createUnitVector(v)) */
 
 func pixelsGenerator(rows nx: Int, cols ny: Int) -> [(Int, Int, Int)] {
   let lowerLeftCorner = Vector3<Float>(-2, -1, -1)
